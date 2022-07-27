@@ -38,7 +38,7 @@ const Container = styled.div`
 `
 
 export default function Home() {
-  const [data, setData] = useState({ name: "", number: "", message: "" })
+  const [data, setData] = useState({ name: "", number: "", review: "" })
 
   const updateState = (type, value) => {
     setData((data) => ({ ...data, [type]: value }))
@@ -55,7 +55,7 @@ export default function Home() {
       },
     })
 
-    setData({ name: "", number: "", message: "" })
+    setData({ name: "", number: "", review: "" })
   }
 
   return (
@@ -71,12 +71,12 @@ export default function Home() {
           placeholder="Phone number"
         />
         <textarea
-          onChange={(e) => updateState("message", e.target.value)}
-          placeholder="Enter message"
+          onChange={(e) => updateState("review", e.target.value)}
+          placeholder="Enter review"
         />
         <input
           disabled={
-            !data.name.length || !data.number.length || !data.message.length
+            !data.name.length || !data.number.length || !data.review.length
           }
           type="submit"
         />
