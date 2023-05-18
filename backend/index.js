@@ -15,7 +15,7 @@ cohere.init(process.env.API_KEY)
 const POSITIVE_SAMPLES = [
   "The reception was great. I love how your staff welcomed us and showed us our rooms",
   "Your staffs took us on a tour round the hotel, and I really enjoyed that",
-  "The The bedroom we stayed in was very conducive. Also loved the paintings on the walls.",
+  "The bedroom we stayed in was very conducive. Also loved the paintings on the walls.",
   "The amenities in the room were great and the rooms were also clean",
   "I have stayed in many hotels but this one tops it for me. Enjoyed the customer service and the clean rooms.",
 ]
@@ -30,9 +30,7 @@ const NEGATIVE_SAMPLES = [
 
 async function classifyReview(input) {
   const response = await cohere.classify({
-    model: "medium",
-    taskDescription: "",
-    outputIndicator: "",
+    model: "embed-english-v2.0",
     inputs: [input],
     examples: POSITIVE_SAMPLES.map((sample) => ({
       text: sample,
